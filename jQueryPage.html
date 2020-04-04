@@ -1,0 +1,94 @@
+<!-- /********************************************************************************************************
+ * jQuery
+ * Author: Kiran B E
+ * -------------------
+ * jQuery is light-weight, "Write less do more" JavaScrit framework.
+ * jQuery is a single powerful JavaScript file, its cross-browser
+ * Feature: selector, Events, Ajax, Plugins
+ * 
+ * Why jQuery?
+ * - To overcome Cross-browser issues (IE6 dosen't support events, so jQuery takes 
+ *     that headache out of piture and we can focus more on logic, UI),
+ * - The purpose of jQuery is to make it much easier to use JavaScript on your browser
+ * - jQuery takes list of common tasks that require many lines of JavaScript 
+ *     code to accomplish, wrap them into a method that you can call with single line of 
+ *     code.
+ * 
+ * 
+ * To use jQuery
+ * - Download the jQuery script from http://jquery.com
+ * - Need to support IE 6-8? Go with jQuery 1.x
+ * - Don't need to support IE 6-8? i.e., it supports IE9 and higher versions, Go with jQuery 2.x
+ * - Reference the Script in your web page:
+ *     <head>
+ *       <script type="text/javascript" src ="jquery.js"></script>
+ *     </head>
+ * 
+ *   Alternatively, can use Google or Microsoft CDN (Content Delivery Network)
+ * 
+ *    <head>
+ *      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ *    </head>
+ * 
+ *    <head>
+ *      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+ *    </head>
+ * 
+ *    If there was problem with the CDN you can load the script locally:
+ * 
+ *      if CDN fails to load jQuery, then ure FALLBACK to use jQuery from local as shown bellow
+ * 
+ *       <head>
+ *         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ *       
+ *         <script>
+ *           window.jQuery||document.write('<script src="jquery.js"></script>')
+ *         </script>
+ *       </head>
+ *   
+ *   Using the jQuery Ready function:
+ *   
+ *    - use $(document).ready() to detect when a page has loaded and is ready to use
+ *    - called once DOM hierarchy is loaded (but before all images have loaded)
+ * 
+ *    <script>
+ *      $(document).ready(function(){
+ *         //perform some action here
+ *      })
+ *    </script>
+ * 
+ *    here $ is alies for the word jQuery. $ = jQuery
+ *       
+ *    
+ ********************************************************************************************************** /-->
+
+ <html>
+     <head>
+         <script src="jquery.js"></script>
+
+         <!-- <script>
+             window.onload = function(){
+                 alert('window loaded');
+             }
+         </script>
+
+         <Script>
+             $(document).ready(function(){
+                 alert('DOM loaded');
+             })
+         </Script> -->
+
+         <script>
+             $(document).ready(function(){
+                 $(idContent).html('Hello World');
+             })
+         </script>
+     </head>
+
+     <body>
+         <div id="idContent">
+            My jQuery enabled page!
+         </div>
+        
+     </body>
+ </html>
