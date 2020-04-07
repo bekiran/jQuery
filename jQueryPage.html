@@ -62,11 +62,12 @@
  *    
  **********************************************************************************************************-->
 
- <html>
-     <head>
-         <script src="jquery.js"></script>
+<html>
 
-         <!-- <script>
+<head>
+    <script src="jquery.js"></script>
+
+    <!-- <script>
              window.onload = function(){
                  alert('window loaded');
              }
@@ -78,29 +79,69 @@
              })
          </Script> -->
 
-         <script>
-             $(document).ready(function(){
-                 $(idContent).html('Hello World'); //get get the contents div element and replace it with 'Hello World'
+    <script>
+        $(document).ready(function () {  //$(function(){})  Shorthand
+            console.log('kiran') 
+            $('#idContent').html('Hello World'); //get get the contents div element and replace it with 'Hello World'
 
-                 var divs = $('div');
-                 alert('No. of div elements are: '+divs.length) //div elements count
+            var divs = $('div');
+            alert('No. of div elements are: ' + divs.length); //div elements count
 
-                 $('div').css('background-color','Pink') //div color change
+            $('div').css('background-color', 'Pink'); //div color change
 
-                 $('div').each(function(){
-                     alert($(this).html())
-                 })
-             })
-         </script>
-     </head>
+            //$('div').each(function () {
+            //     alert($(this).html())
+            //})
 
-     <body>
-         <div id="idContent">
-            My jQuery enabled page!
-         </div>
-        
-     </body>
- </html>
+            $('.title').css('color', 'Blue');
+
+            $('div.ind').css('color', 'blue');
+
+            $('div[title="indi"]').css('font-weight', 'bold');
+
+            var indi = $('div[title="indi"');
+            indi.css('background-color', 'yellow')
+
+            $(':input').each(function(){
+                var elem = $(this); //this is wrapped in jquery wrapper
+                alert(elem.val())
+            })
+            $(':input').css('background-color','blue')
+        })
+    </script>
+</head>
+
+<body>
+    <div id="idContent" class="title">
+        My jQuery enabled page!
+    </div>
+
+    <div class="ind">
+        India fighting Covid-19 <span style="color: red; font-weight: bold;"> Stay in home, Stay safe</span>
+    </div>
+
+    <div title="indi">
+        india
+    </div>
+
+    <form>
+        <table style="width: 300px;">
+
+            <tr>
+                <td style="width: 30%">First Name</td>
+                <td style="width: 70%;"><input type="text" value="kiran"></td>
+            </tr>
+            <tr>
+                <td style="width: 30%">Last Name</td>
+                <td style="width: 70%;"><input type="text"></td>
+            </tr>
+
+        </table>
+    </form>
+
+</body>
+
+</html>
 
 <!-- jQuery selector :
      ---------------
@@ -119,5 +160,10 @@
     $('ancestor descendant') selects all descendants of ancestor 
 
     $('table tr') selects all tr elements that descendants of the table element
--->
+    
 
+    * # character to select elements by ID     - selecting node by Name 
+    * . character to select elements by class  - selecting node by class
+    * [attribute] to select based on attribute name and/or attribute value - selecting node by attribute value
+    * $(':input') selecting node by input element
+-->

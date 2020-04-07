@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title>jQuery</title>
+
+    <script src="jquery.js"></script>
+    <script src="prototype.js"></script>
+
+    <script>
+        //// Give $ back to prototype.js; create new alias to jQuery.
+        var $jq = jQuery.noConflict();
+        //When you put jQuery into no-conflict mode, you have the option of assigning a new variable name to replace the $ alias.
+
+        //$jq = jQuery
+
+        $jq(function () {  //anonymous function $j(document).ready(function(){ ... })
+            alert('Document loaded');
+            console.log('Document Loaded');
+
+            $jq('h2.title').css('background-color', 'blue');
+        })
+        $jq(window).on('load', function () {
+            console.log('Window Loaded');
+        })
+
+        //attributes: 
+        //The .attr() method acts as both a getter and a setter
+        //As a setter, .attr() can accept either a key and a value, or an object containing one or more key/value pairs.
+
+        $("a").attr("href", "allMyHrefsAreTheSameNow.html");
+
+        $("a").attr({
+            title: "all titles are the same too!",
+            href: "somethingNew.html"
+        });
+
+        //.attr() as a getter:
+
+        $("a").attr("href"); // Returns the href for the first a element in the document
+
+        //Selecting Elements: The most basic concept of jQuery is to "select some elements and do 
+        //something with them." jQuery supports most CSS3 selectors, as well as some non-standard 
+        //selectors.
+
+        //Selecting element by ID:
+        $jq("#myId");
+
+        //Selecting element by class:
+        $jq(".myClass")
+
+        //Selecting element by attribute:
+        $jq("input[name='firstName']")
+
+        //Selecting Elements by Compound CSS Selector
+        $("#contents ul.people li");
+
+        //Selecting Elements with a Comma-separated List of Selectors
+        $("div.myClass, ul.people");
+
+        //Pseudo-Selectors
+        $("a.external:first");
+        $("tr:odd");
+
+        // Select all input-like elements in a form (more on this below).
+        $("#myForm :input");
+        $("div:visible");
+
+        // All except the first three divs.
+        $("div:gt(2)");
+
+        // All currently animated divs.
+        $("div:animated");
+
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <h2 class="title" style="text-align: center;">jQuery
+    </div>
+    <iframe src="http://jquery.com"></iframe>
+    </h2>
+</body>
+
+</html>
